@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW BOATS</title>
+</head>
+<style>
+
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 70%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: heveltika;}
+</style>
+
+<body>
+<center><h2 style="text-align:center">BOAT DETAILS</h2></center>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+
+
+<form role="form" name="viewboats" action="{'viewboats'}" method="post">
+    {% csrf_token %}
+   <center><table class="tableadminviewroom" style=" border-style: double" id="customers">
+       <tr style="background-color: #96D4D4;">
+           <th style=" border-style: double">BOAT NAME</th>
+           <th style=" border-style: double">BOAT TYPE</th>
+           <th style=" border-style: double">RATE</th>
+           <th style=" border-style: double">DESCRIPTION</th>
+           <th style=" border-style: double">PHONE</th>
+           <th style=" border-style: double">LOCATION</th>
+           <th style=" border-style: double">IMAGE</th>
+           <th style=" border-style: double">UPDATE</th>
+           <th style=" border-style: double">DELETE</th>
+       </tr>
+       <tbody>
+       {% for p in details %}
+       <tr>
+           <td style=" border-style: double">{{p.boat_name}}</td>
+           <td style=" border-style: double">{{p.boat_type}}</td>
+           <td style=" border-style: double">{{p.rate }}</td>
+           <td style=" border-style: double">{{p.discription}}</td>
+           <td style=" border-style: double">{{p.phone}}</td>
+           <td style=" border-style: double">{{p.location}}</td>
+
+           <td><img src="../static/media/{{p.image}}" height="100px" width="100px"></td>
+           <td style=" border-style: double"><a href="../updateboat/{{ p.boat_id }}" >update</a></td>
+           <td style=" border-style: double"><a href="../deleteboat/{{p.boat_id}}/">delete</a></td>
+
+       </tr>
+        {% endfor %}
+       </tbody>
+   </table></center>
+</form>
+
+
+
+
+
+                    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOMEPAGE</title>
+     <link rel="stylesheet" href=" {% static '/css/home1.css' %}">
+</head>
+<style>
+    h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: italic;
+    color: #555;
+}
+</style>
+<body>
+
+<div class="container">
+   <div class="navbar">
+
+       <nav>
+           <ul>
+              <li> <h3>Welcome {{ request.session.email }} </h3></li>
+               <li><a href="#">USER HOME</a> </li>
+               <li><a href="Contactus">ABOUT</a> </li>
+               <li><a href="userboat">BOATS</a> </li>
+               <li><a href="updateprofile">EDIT PROFILE</a> </li>
+               <li><a href="/">LOGOUT</a> </li>
+           </ul>
+
+       </nav>
+
+   </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<div class="update_product">
+		<center>
+                 <h2 style="text-align:center"> UPDATE BOAT DETAILS</h2>
+    <form role="form" name="frm" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+			<label for="boat_name">Boat Name</label>
+	        <input class="form-control" type="text"  id="boat_name" name="boat_name" value="{{up.boat_name}}" placeholder="" required="required">
+
+		</div>
+
+		<div class="form-group">
+			<label for="rate">Amount</label>
+	        <input type="text" class="form-control" id="rate" name="rate" placeholder=" Update rate"  value="{{up.rate}}">
+		</div>
+        <div class="form-group">
+			<label for="discription">discription</label>
+	        <input type="text" class="form-control" id="discription" name="discription" placeholder=" Update discription"  value="{{up.discription}}">
+		</div>
+
+		 <div class="form-group">
+			<label for="discription">phone</label>
+	        <input type="text" class="form-control" id="phone" name="phone" placeholder=" Update phone"  value="{{up.phone}}">
+		</div>
+		<div class="form-group">
+			<label for="discription">location</label>
+	        <input type="text" class="form-control" id="location" name="location" placeholder=" Update location"  value="{{up.location}}">
+		</div>
+
+
+
+
+		<button type="submit" class="btn btn-info" id="bt" name="bt">Update</button>
+
+
+        <input type="hidden" name="boat_id" value="{{ up.boat_id }}">
+
+
+	    </table>
+    </form>
+	{{msg}}
+			</center>
+	</div>
+</body>
+</html>
